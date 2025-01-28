@@ -1,10 +1,22 @@
-import express from "express";
+import express, { Request, Response } from "express";
 
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello, TypeScript with Node.js!");
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello, TypeScript with Node.js 🎉");
+});
+
+app.get("/api", (req: Request, res: Response) => {
+  const user = {
+    name: "John Doe",
+    email: "john@doe.com"
+  };
+
+  res.json({
+    message: "Hello, TypeScript with Node.js!!",
+    user
+  });
 });
 
 app.listen(PORT, () => {
