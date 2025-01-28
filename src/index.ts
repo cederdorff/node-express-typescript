@@ -8,14 +8,8 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/api", (req: Request, res: Response) => {
-  const user = {
-    name: "John Doe",
-    email: "john@doe.com"
-  };
-
   res.json({
-    message: "Hello, TypeScript with Node.js!!",
-    user
+    message: "Hello, TypeScript with Node.js!!"
   });
 });
 
