@@ -1,26 +1,12 @@
-import express, { Request, Response } from "express";
+import express from "express";
 
 const app = express();
 const PORT = 3000;
 
-// Define a type for the response message
-type ResponseMessage = {
-  message: string;
-};
-
-// Root route
-app.get("/", (req: Request, res: Response<string>) => {
-  res.send("Hello, TypeScript with Node.js 🎉");
+app.get("/", (req, res) => {
+  res.json({ message: "Hello, TypeScript + Express + ESM!" });
 });
 
-// API route with a typed response
-app.get("/api", (req: Request, res: Response<ResponseMessage>) => {
-  res.json({
-    message: "Hello, TypeScript with Node.js!!"
-  });
-});
-
-// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
