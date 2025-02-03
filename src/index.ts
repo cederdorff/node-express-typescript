@@ -1,9 +1,13 @@
-import express from "express";
+import express, { Request, Response } from "express";
 
 const app = express();
 const PORT = 3000;
 
-app.get("/", (req, res) => {
+type ResponseMessage = {
+  message: string;
+};
+
+app.get("/", (req: Request, res: Response<ResponseMessage>) => {
   res.json({ message: "Hello, TypeScript + Express + ESM!!!!" });
 });
 
